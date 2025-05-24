@@ -1,0 +1,29 @@
+Architecture:
+🔒 1. Authentication with Manual Session Creation
+After user login:
+
+Generate a session record in your DB (Session model).
+
+Store session ID in a secure cookie (HttpOnly, SameSite, etc).
+
+Set is_logged_in: true in DB.
+
+Attach the session ID to each incoming request via middleware.
+
+🧠 2. Tracking Middleware
+Create an Express middleware that:
+
+Checks for session ID from cookie.
+
+Fetches session from DB.
+
+Logs metadata (IP, browser, etc).
+
+Stores/updates it in your sessions table.
+
+📈 3. User Interaction Logging
+Set up a frontend script that:
+
+Tracks scroll distance, time on page, clicks, etc.
+
+Sends periodic updates to an Express API like POST /track.
