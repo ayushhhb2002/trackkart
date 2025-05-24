@@ -66,7 +66,7 @@ const Page = ({
     };
 
     try {
-      await axios.post("http://localhost:4000/interaction", payload);
+      await axios.post("https://trackkart-production.up.railway.app/interaction", payload);
       // console.log("✅ Interaction sent:", payload);
     } catch (error) {
       console.error("❌ Failed to send interaction data:", error);

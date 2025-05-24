@@ -18,7 +18,7 @@ const Logout = () => {
         try {
           const sessionId = localStorage.getItem("userSessionId");
           if (sessionId) {
-            await axios.post("http://localhost:4000/session/end", {
+            await axios.post("https://trackkart-production.up.railway.app/session/end", {
               sessionId,
             });
             localStorage.removeItem("userSessionId");

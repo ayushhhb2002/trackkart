@@ -27,7 +27,7 @@ const SignupLogin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/signup",
+        "https://trackkart-production.up.railway.app/signup",
         formData
       );
 

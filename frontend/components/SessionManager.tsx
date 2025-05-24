@@ -15,7 +15,7 @@ const SessionManager: React.FC = () => {
           valid: boolean;
           userId: number;
           role?: string;
-        }>("http://localhost:4000/session/validate", { sessionId });
+        }>("https://trackkart-production.up.railway.app/session/validate", { sessionId });
 
         if (response.data.valid) {
           login(response.data.userId, response.data.role ?? "user");
@@ -73,7 +73,7 @@ const SessionManager: React.FC = () => {
       try {
         const sessionData = await getSessionData();
         const response = await axios.post<StartSessionResponse>(
-          "http://localhost:4000/session/start",
+          "https://trackkart-production.up.railway.app/session/start",
           {
             userId,
             ...sessionData,

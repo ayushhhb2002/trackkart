@@ -31,7 +31,7 @@ const AdminDashboard = () => {
     if (endDate) params.endDate = endDate;
 
     try {
-      const { data } = await axios.get("http://localhost:4000/admin/report", {
+      const { data } = await axios.get("https://trackkart-production.up.railway.app/admin/report", {
         params,
       });
       setReport(data as ReportData);
